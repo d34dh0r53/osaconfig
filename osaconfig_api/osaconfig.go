@@ -117,18 +117,11 @@ func CheckOutOSA(sha string, branchName string) uuid.UUID {
 	// Setting the Head to point to our branch
 	repo.SetHead("refs/heads/" + branchName)
 
-	/*
-		odb, err := repo.Odb()
-		if err != nil {
-			log.Fatal(err)
-		}
-	*/
-
 	return u1
 }
 
 func main() {
-	// TODO(d34dh0r53): Implement arg parsing
+	// TODO(d34dh0r53): Implement real arg parsing
 	SHA = os.Args[1]
 	fmt.Println(CheckOutOSA(SHA, "stable/rocky").String())
 }
